@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Agrowio.SensorDbWriteService.Infastructure.Abstract
 {
-    public interface IPhMeasure : IDbService<PhMeasure>
+    public interface IPressureMeasureRepository:IDbService<PressureMeasure>
     {
     }
 }
