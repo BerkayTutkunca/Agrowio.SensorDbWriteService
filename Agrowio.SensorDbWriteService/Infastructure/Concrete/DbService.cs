@@ -1,4 +1,5 @@
-﻿using Agrowio.SensorDbWriteService.Entities.Abstract;
+﻿using Agrowio.Common.Persistence.Entities.BaseEntities;
+using Agrowio.SensorDbWriteService.Entities.Abstract;
 using Agrowio.SensorDbWriteService.Entities.Concrete;
 using Agrowio.SensorDbWriteService.Infastructure.Abstract;
 using MongoDB.Bson;
@@ -13,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace Agrowio.SensorDbWriteService.Infastructure.Concrete
 {
-    public class DbService<T>:IDbService<T> where T : BaseSensor
+    public class DbService<T>:IDbService<T> where T : BaseCollection
     {
         IMongoClient _client;
         IMongoDatabase _db;
@@ -73,10 +74,10 @@ namespace Agrowio.SensorDbWriteService.Infastructure.Concrete
         {
             try
             {
-                var updateDef = Builders<T>.Update
-                    .Set("DeviceIdentity", entity.Metadata.DeviceIdentity)
-                    .Set("InputType", entity.Metadata.InputType);
-                _collection.UpdateOne(x => x.Id == entity.Id, updateDef);
+                //var updateDef = Builders<T>.Update
+                //    .Set("DeviceIdentity", entity.Metadata.DeviceIdentity)
+                //    .Set("InputType", entity.Metadata.InputType);
+                //_collection.UpdateOne(x => x.Id == entity.Id, updateDef);
                 return entity;
             }
             catch (Exception)

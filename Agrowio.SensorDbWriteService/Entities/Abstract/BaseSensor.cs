@@ -1,4 +1,5 @@
-﻿using Agrowio.SensorDbWriteService.Entities.Concrete;
+﻿using Agrowio.Common.Persistence.Entities.BaseEntities;
+using Agrowio.SensorDbWriteService.Entities.Concrete;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 using System;
@@ -10,12 +11,8 @@ using System.Threading.Tasks;
 namespace Agrowio.SensorDbWriteService.Entities.Abstract
 {
     //[BsonDiscriminator(RootClass = true)]
-    public abstract class BaseSensor
+    public abstract class BaseSensor : BaseCollection
     {
-    
-    [BsonId]
-    public ObjectId Id { get; set; }
-
     [BsonElement("timestamp")]
     public DateTime Timestamp { get; set; }
 
