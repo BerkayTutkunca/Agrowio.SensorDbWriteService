@@ -59,21 +59,14 @@ namespace Agrowio.SensorDbWriteService.Infastructure.Concrete
 
 
             var faker = new Faker<OutTemperature>()
+                .RuleFor(u=>u.Id,f=>f.Random.Guid())
+                .RuleFor(u=> u.InputId, f=> new Guid("5c162b61-dc33-ae1d-d4ae-a92a373f86f5"))
                 .RuleFor(u => u.Timestamp, f => f.Date.Between(new(2022, 1, 1), new DateTime(2025, 1, 1)))
                 .RuleFor(u => u.Value, f => f.Random.Int(0, 45))
-                .RuleFor(u => u.Metadata, f => new BaseMeta { InputId = new Guid("5c162b61-dc33-ae1d-d4ae-a92a373f86f5"), DeviceIdentity = "0031" });
+                .RuleFor(u => u.Metadata, f => new BaseMeta {DeviceIdentity = "0031" });
 
 
             return faker.Generate(count); ;
-        }
-
-        public List<Entities.BaseEntities.BaseMeta>  BaseMetaGenerator(int count) 
-        {
-            var faker = new Faker<Entities.BaseEntities.BaseMeta>()
-                .RuleFor(u => u.InputId, f => new Guid("5c162b61-dc33-ae1d-d4ae-a92a373f86f5"))
-                .RuleFor(u => u.DeviceIdentity, f => "0031");
-
-            return faker.Generate(count);
         }
 
 

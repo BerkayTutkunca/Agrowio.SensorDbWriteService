@@ -11,7 +11,7 @@ namespace Agrowio.SensorDbWriteService.Entities.BaseEntities
     {
         public string DeviceIdentity { get; set; }
 
-        public Guid InputId { get; set; }
+        //public Guid InputId { get; set; }
 
         //public string InputType { get; set; }
         //public string Ortam { get; set; }

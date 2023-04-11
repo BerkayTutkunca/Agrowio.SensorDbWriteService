@@ -11,6 +11,7 @@ using System;
 using System.Diagnostics;
 
 using Bogus;
+using Agrowio.Common.MongoDbService.Infrastructure.Repositories;
 
 namespace Agrowio.SensorDbWriteService
 {
@@ -56,24 +57,17 @@ namespace Agrowio.SensorDbWriteService
             //WindDirection wd = new WindDirection() {Metadata=new BaseMeta() {DeviceIdentity="222",InputType="aaa",Ortam="11" },Timestamp=DateTime.Now,Value=21 };
 
 
-            //var dbService = new WindDirectionRepository();
+            var dbService = new OutTemperatureRepository();
 
-
-            var dbService = new AutomationHistoryRepository();
 
             var bogus = new BogusService();
-            var q =bogus.Generator(10);
+            
             var b = bogus.OutTemperatureGenerator(10);
 
-            foreach ( var item in b)
-            {
-                item.Metadata.DeviceIdentity = "111111111";
-
-            }
-            var c = bogus.BaseMetaGenerator(10);
+            
             //await collection.InsertManyAsync(b);
 
-            //await dbService.AddManyAsync(b);
+            await dbService.AddManyAsync(b);
             Console.WriteLine("Başladı");
 
             Stopwatch stopwatch = Stopwatch.StartNew();
