@@ -12,9 +12,9 @@ namespace Agrowio.SensorDbWriteService.Infastructure.Abstract
     public interface IDbService<T>
     {
         public bool Add(T item);
-        public bool Remove(ObjectId id);
+        public bool Remove(Guid id);
         public T Update(T item);
-        public T GetById(ObjectId id);
+        public T GetById(Guid id);
         public List<T> GetAll();
 
 

@@ -1,4 +1,4 @@
-﻿using Agrowio.SensorDbWriteService.Entities.Abstract;
+﻿using Agrowio.SensorDbWriteService.Entities.BaseEntities;
 using MongoDB.Bson.Serialization.Attributes;
 using System;
 using System.Collections.Generic;

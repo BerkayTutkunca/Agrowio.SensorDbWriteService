@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace Agrowio.SensorDbWriteService.Infastructure.Concrete
 {
-    public class AutomationHistoryRepository  
+    public class AutomationHistoryRepository  : DbService<AutomationHistory>, IAutomationHistoryRepository
     {
-        public AutomationHistoryRepository( )
+        public AutomationHistoryRepository( ):base("AutomationHistory" )
         {
            
         }

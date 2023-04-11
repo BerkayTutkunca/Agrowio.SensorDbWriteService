@@ -1,4 +1,5 @@
-﻿using Agrowio.SensorDbWriteService.Entities.Abstract;
+﻿
+using Agrowio.SensorDbWriteService.Entities.BaseEntities;
 using System;
 using System.Collections.Generic;
 using System.Linq;

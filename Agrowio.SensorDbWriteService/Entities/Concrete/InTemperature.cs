@@ -1,17 +1,11 @@
-﻿using Agrowio.SensorDbWriteService.Entities.Abstract;
-using MongoDB.Bson;
+﻿using Agrowio.SensorDbWriteService.Entities.BaseEntities;
 using MongoDB.Bson.Serialization.Attributes;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Agrowio.SensorDbWriteService.Entities.Concrete
 {
-    [BsonDiscriminator("temperature")]
+    [BsonDiscriminator("InTemperature")]
     [Serializable]
-    public class Temperature : BaseSensor
+    public class InTemperature : BaseSensor
     {
 
     }
@@ -21,4 +15,5 @@ namespace Agrowio.SensorDbWriteService.Entities.Concrete
     //    [BsonElement("metadata")]
     //    public string PoliField { get; set; }
     //}
+
 }

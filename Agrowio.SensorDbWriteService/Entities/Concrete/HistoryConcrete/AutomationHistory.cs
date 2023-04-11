@@ -1,5 +1,5 @@
 ﻿using Agrowio.Common.Models.Enums;
-using Agrowio.SensorDbWriteService.Entities.Abstract;
+using Agrowio.SensorDbWriteService.Entities.BaseEntities;
 using MongoDB.Bson.Serialization.Attributes;
 using System;
 using System.Collections.Generic;
@@ -14,6 +14,8 @@ namespace Agrowio.SensorDbWriteService.Entities.Concrete.HistoryConcrete
     {
         [BsonElement("onofftype")]
         public OnOffType OnOffType { get; set; }
+
+        
 
     }
 }
